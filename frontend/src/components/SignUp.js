@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
-
+const API_URL="https://hospital-management-internsahala.vercel.app"
 const SignUp = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ const SignUp = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:5000/api/signup', {
+        const response = await fetch(`${API_URL}/api/signup`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
